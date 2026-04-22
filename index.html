@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAKA LLC | Home Care & Shared Living in New Hampshire</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV (Why Choose Us removed) -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-wrap" href="index.html">
+        <img src="images/logo.png" alt="PAKA LLC logo" class="brand-logo">
+        <div class="brand-title">
+          <p class="name">PAKA LLC</p>
+          <p class="tag">Passion, Accountability, Kindness & Action</p>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="topNav">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="work-with-us.html">Work with Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-blob"></div>
+        <div class="hero-blob2"></div>
+
+        <div class="row g-4 hero-inner">
+          <div class="col-lg-6">
+            <span class="badge-soft"><i class="fa-solid fa-heart-circle-check"></i> Non-medical care across New Hampshire</span>
+            <h1 class="mt-3 mb-2">Care that feels like family — at home or in shared living.</h1>
+            <p class="lead mb-3">
+              PAKA LLC supports seniors and adults with disabilities with respectful, reliable, and personalized care.
+              Use the quick form to request care — we’ll contact you as soon as possible.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-primary btn-request-care">
+                <i class="fa-solid fa-bolt"></i> Request Care
+              </button>
+              <a href="services.html" class="btn btn-outline-dark"><i class="fa-solid fa-list-check"></i> Explore Services</a>
+            </div>
+
+            <p class="small-note mt-3 mb-0">
+              <i class="fa-solid fa-phone"></i> (603) 233-1853 &nbsp;&nbsp;|&nbsp;&nbsp;
+              <i class="fa-solid fa-envelope"></i> pakahomecare@gmail.com
+            </p>
+          </div>
+
+          <div class="col-lg-6" id="request-care">
+            <!-- WIZARD -->
+            <div class="wizard" id="careWizard">
+              <div class="wizard-header">
+                <div>
+                  <p class="mb-1 fw-bold">Quick Care Request</p>
+                  <p class="small-note mb-0">Answer a few questions. It takes about 1 minute.</p>
+                </div>
+                <div class="step-dots" aria-label="Steps">
+                  <div class="dot active"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+              </div>
+
+              <div class="wizard-body">
+                <form id="careWizardForm" onsubmit="return false;">
+                  <!-- STEP 1 -->
+                  <div class="wizard-step">
+                    <h5 class="step-title">Step 1: Client Location</h5>
+                    <p class="help-text">Enter the Town/City and state where the client who needs care is located.</p>
+
+                    <input id="careLocation" class="form-control" placeholder="Example: Nashua, NH" maxlength="80" />
+                    <div class="wizard-actions">
+                      <span class="small-note"><i class="fa-solid fa-lock"></i> Your details are shared only with PAKA LLC.</span>
+                      <button type="button" class="btn btn-primary btn-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div class="wizard-step d-none">
+                    <h5 class="step-title">Step 2: Care Type</h5>
+                    <p class="help-text">What care are you looking for? Choose one option.</p>
+
+                    <div class="option-grid">
+                      <div class="option-card half" data-care="homecare">
+                        <p class="title">Home care <i class="fa-solid fa-house-chimney"></i></p>
+                        <p class="desc">Non-medical help in the client’s own home (daily tasks, safety, companionship).</p>
+                      </div>
+
+                      <div class="option-card half" data-care="afcr">
+                        <p class="title">AFCR / Shared living <i class="fa-solid fa-people-roof"></i></p>
+                        <p class="desc">24/7 care in a certified caregiver’s home (home-like environment & supervision).</p>
+                      </div>
+
+                      <div class="option-card" data-care="other">
+                        <p class="title">Other service or unsure <i class="fa-solid fa-circle-question"></i></p>
+                        <p class="desc">Describe what you need. We’ll guide you to the right option.</p>
+                      </div>
+                    </div>
+
+                    <div id="otherBox" class="d-none mt-3">
+                      <label class="fw-bold mb-2">Describe the care you need (max 500 characters)</label>
+                      <textarea id="otherDescription" class="form-control" rows="3" maxlength="500" placeholder="Type here..."></textarea>
+                    </div>
+
+                    <div class="wizard-actions">
+                      <button type="button" class="btn btn-outline-dark btn-back"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                      <button type="button" class="btn btn-primary btn-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3 (dynamic for homecare OR afcr) -->
+                  <div class="wizard-step d-none">
+                    <!-- HOMECARE HOURS -->
+                    <div id="blockHours" class="d-none">
+                      <h5 class="step-title">Step 3: Hours per week</h5>
+                      <p class="help-text">Choose how many hours of care needed per week.</p>
+
+                      <select id="hoursPerWeek" class="form-select">
+                        <option value="" selected disabled>Select an option</option>
+                        <option>10 to 20 hours per week</option>
+                        <option>21 to 30 hours per week</option>
+                        <option>30 to 40 hours per week</option>
+                        <option>40+ hours per week</option>
+                        <option>24/7 home care</option>
+                      </select>
+                    </div>
+
+                    <!-- AFCR START WHEN -->
+                    <div id="blockAfcrStart" class="d-none">
+                      <h5 class="step-title">Step 3: How soon do you need service?</h5>
+                      <p class="help-text">Choose how quickly you are looking for service.</p>
+
+                      <select id="startWhenAfcr" class="form-select">
+                        <option value="" selected disabled>Select an option</option>
+                        <option>Immediately</option>
+                        <option>Within 2 weeks</option>
+                        <option>Within 1 month</option>
+                      </select>
+                    </div>
+
+                    <div class="wizard-actions">
+                      <button type="button" class="btn btn-outline-dark btn-back"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                      <button type="button" class="btn btn-primary btn-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 4 (homecare start when) -->
+                  <div class="wizard-step d-none">
+                    <h5 class="step-title">Step 4: How soon do you need service?</h5>
+                    <p class="help-text">Choose how quickly you are looking for service.</p>
+
+                    <select id="startWhenHome" class="form-select">
+                      <option value="" selected disabled>Select an option</option>
+                      <option>Immediately</option>
+                      <option>Within 2 weeks</option>
+                      <option>Within 1 month</option>
+                    </select>
+
+                    <div class="wizard-actions">
+                      <button type="button" class="btn btn-outline-dark btn-back"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                      <button type="button" class="btn btn-primary btn-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 5 (contact) -->
+                  <div class="wizard-step d-none">
+                    <h5 class="step-title">Final Step: Your Contact Details</h5>
+                    <p class="help-text">Our representative will contact you as soon as possible. Please enter your details.</p>
+
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="fw-bold mb-2">First Name</label>
+                        <input id="firstName" class="form-control" maxlength="40" placeholder="First name">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="fw-bold mb-2">Last Name</label>
+                        <input id="lastName" class="form-control" maxlength="40" placeholder="Last name">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="fw-bold mb-2">Email ID</label>
+                        <input id="email" type="email" class="form-control" maxlength="80" placeholder="name@example.com">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="fw-bold mb-2">Phone Number</label>
+                        <input id="phone" type="tel" class="form-control" maxlength="20" placeholder="(###) ###-####">
+                      </div>
+                    </div>
+
+                    <div class="wizard-actions">
+                      <button type="button" class="btn btn-outline-dark btn-back"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                      <button type="button" class="btn btn-primary btn-submit">
+                        Submit <i class="fa-solid fa-paper-plane"></i>
+                      </button>
+                      <span class="small-note">Please enter a valid email and 10-digit phone number.</span>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <!-- /WIZARD -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CARDS -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="info-card">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div>
+              <div>
+                <h5 class="section-title mb-1">Dignity & Safety</h5>
+                <p class="section-sub mb-0">Respectful, non-medical support focused on comfort, safety, and independence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-card">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-circle"><i class="fa-solid fa-calendar-check"></i></div>
+              <div>
+                <h5 class="section-title mb-1">Flexible Options</h5>
+                <p class="section-sub mb-0">Hourly, overnight, live-in, 24/7 availability — based on your needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-card">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-circle"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div>
+                <h5 class="section-title mb-1">PAKA Values</h5>
+                <p class="section-sub mb-0">Passion, Accountability, Kindness & Action in every interaction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6">
+          <div class="footer-brand">© <span id="year"></span> PAKA LLC</div>
+          <div class="small-note">Website developed and maintained by PAKA LLC.</div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social">
+            <a href="#" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/emailjs-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

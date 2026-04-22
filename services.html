@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAKA LLC | Services</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-wrap" href="index.html">
+        <img src="images/logo.png" alt="PAKA LLC logo" class="brand-logo">
+        <div class="brand-title">
+          <p class="name">PAKA LLC</p>
+          <p class="tag">Passion, Accountability, Kindness & Action</p>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="topNav">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="work-with-us.html">Work with Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+        <div>
+          <h2 class="section-title mb-1">Services</h2>
+          <div class="section-sub">Choose a category. Click a service card to open its page.</div>
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+          <label class="fw-bold">Service Category:</label>
+          <select id="serviceFilter" class="form-select" style="min-width: 280px;">
+            <option value="all" selected>All Services</option>
+            <option value="homecare">Home Care Services</option>
+            <option value="afcr">Adult Family Care Residence (AFCR) Services</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <!-- All Services -->
+        <div class="col-lg-4 service-item" data-type="all">
+          <div class="service-card service-clickable" data-href="service-all.html">
+            <span class="pill">All Services</span>
+            <h5 class="mt-2">Overview</h5>
+            <p class="section-sub">
+              Compassionate, non-medical care across New Hampshire with two primary service models.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-outline-dark" href="service-all.html">More Info</a>
+              <button class="btn btn-primary btn-request-care" type="button">Request Care</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Home Care -->
+        <div class="col-lg-4 service-item" data-type="homecare">
+          <div class="service-card service-clickable" data-href="service-homecare.html">
+            <span class="pill green">Home Care</span>
+            <h5 class="mt-2">Home Care Services</h5>
+            <p class="section-sub">Care provided in the client’s own home (daily support, safety, companionship).</p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-outline-dark" href="service-homecare.html">More Info</a>
+              <button class="btn btn-primary btn-request-care" type="button">Request Care</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- AFCR -->
+        <div class="col-lg-4 service-item" data-type="afcr">
+          <div class="service-card service-clickable" data-href="service-afcr.html">
+            <span class="pill green">AFCR / Shared Living</span>
+            <h5 class="mt-2">Adult Family Care Residence</h5>
+            <p class="section-sub">24/7 care in a certified caregiver’s home (family-style environment).</p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-outline-dark" href="service-afcr.html">More Info</a>
+              <button class="btn btn-primary btn-request-care" type="button">Request Care</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6">
+          <div class="footer-brand">© <span id="year"></span> PAKA LLC</div>
+          <div class="small-note">Website developed and maintained by PAKA LLC.</div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social">
+            <a href="#" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
